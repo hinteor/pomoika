@@ -1,0 +1,8 @@
+﻿  yvu1.cpp
+D:\studia\yvu1\yvu1\yvu1.cpp(17,32): warning C4101: y1: неиспользованная локальная переменная
+D:\studia\yvu1\yvu1\yvu1.cpp(17,28): warning C4101: x1: неиспользованная локальная переменная
+D:\studia\yvu1\yvu1\yvu1.cpp(17,25): warning C4101: y: неиспользованная локальная переменная
+D:\studia\yvu1\yvu1\yvu1.cpp(17,22): warning C4101: x: неиспользованная локальная переменная
+D:\studia\yvu1\yvu1\yvu1.cpp(17,19): warning C4101: h: неиспользованная локальная переменная
+D:\studia\yvu1\yvu1\yvu1.cpp(17,16): warning C4101: g: неиспользованная локальная переменная
+  yvu1.vcxproj -> D:\studia\yvu1\x64\Debug\yvu1.exe
