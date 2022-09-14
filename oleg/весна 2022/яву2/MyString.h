@@ -5,25 +5,25 @@ using namespace std;
 class MyString
 {
 protected:
-	static long unsigned int copy; //для подсчёта, сколько раз вызвался конструктор	
+	static long unsigned int copy; //РґР»СЏ РїРѕРґСЃС‡С‘С‚Р°, СЃРєРѕР»СЊРєРѕ СЂР°Р· РІС‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ	
 public:
 	char* Str;
 	long unsigned int length;
 
 	unsigned long int GetLength()
 	{
-		cout << "Вызвался метод получения длины строки" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РґР»РёРЅС‹ СЃС‚СЂРѕРєРё" << endl;
 		return this->length;
 	}
 
 	MyString() {
-		cout << "Вызвался конструктор по умолчанию" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ" << endl;
 		Str = new char[1];
 		Str[0] = '\0';
 		length = 1;
 	}
 	MyString(char* UserString) {
-		cout << "Вызвался конструктор с параметром Си-строка" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РЎРё-СЃС‚СЂРѕРєР°" << endl;
 		Str = new char[strlen(UserString) + 1];
 		length = (strlen(UserString) + 1);
 		for (long unsigned int i = 0; i < length; i++) {
@@ -33,7 +33,7 @@ public:
 	}
 	MyString(const MyString& CopyString) {
 		copy++;
-		cout << "Вызвался конструктор копирования (" << copy << "-й раз)" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ (" << copy << "-Р№ СЂР°Р·)" << endl;
 		length = (strlen(CopyString.Str) + 1);
 		Str = new char[length + 1];
 		for (long unsigned int i = 0; i < length; i++) {
@@ -43,7 +43,7 @@ public:
 	}
 	MyString(char symbol)
 	{
-		cout << "Вызвался конструктор с параметром символ char" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј СЃРёРјРІРѕР» charr" << endl;
 		Str = new char[2];
 		Str[0] = symbol;
 		Str[1] = '\0';
@@ -51,7 +51,7 @@ public:
 	}
 	virtual MyString& operator = (const MyString& other)
 	{
-		cout << "Вызвался метод перегрузки операции =" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РјРµС‚РѕРґ РїРµСЂРµРіСЂСѓР·РєРё РѕРїРµСЂР°С†РёРё =" << endl;
 		if (Str != nullptr)
 			delete[] Str;
 		int length = strlen(other.Str);
@@ -92,7 +92,7 @@ public:
 	}
 	virtual ~MyString()
 	{
-		cout << "Вызвался деструктор" << endl;
+		cout << "Р’С‹Р·РІР°Р»СЃСЏ РґРµСЃС‚СЂСѓРєС‚РѕСЂ" << endl;
 		delete[] this->Str;
 	}
 	virtual void SetLowerCase() {}
