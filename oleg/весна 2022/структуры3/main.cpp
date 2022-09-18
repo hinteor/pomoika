@@ -170,7 +170,7 @@ int main()
 			cout << "Ошибка ! файл не найден !" << endl;
 			return 0;
 		}
-	} while (!f.is_open() && !f.good());
+	} while (!f.is_open() || !f.good());
 
 
 
