@@ -6,10 +6,11 @@
 
 using namespace std;
 const int RUN = 32;
-const int n1 = 60000;
-const int n2 = 90000;
-const int n3 = 120000;
-int fs[n1], fs2[n2], fs3[n3];
+const int n1 = 10000;
+const int n2 = 30000;
+const int n3 = 70000;
+const int n4 = 100000;
+int fs[n1], fs2[n2], fs3[n3] , fs4[n4];
 
 
 void PrintStats(int n, long long unsigned int& baseop, long long unsigned int& supop, float time, int& mem)
@@ -170,7 +171,7 @@ int main()
 			cout << "Ошибка ! файл не найден !" << endl;
 			return 0;
 		}
-	} while (!f.is_open() || !f.good());
+	} while (!f.is_open() && !f.good());
 
 
 
@@ -276,6 +277,40 @@ int main()
 	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
 
 	f.close();
+
+	//////////////////////////////////////////////////////////////////
+
+	f.open(path);
+
+	for (int i = 0; i < n4; i++)
+	{
+		f >> str;
+		fs4[i] = str;
+	}
+
+	start = chrono::high_resolution_clock::now();
+	QuickSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В неотсортированном массиве" << endl << endl;
+
+	start = chrono::high_resolution_clock::now();
+	QuickSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В отсортированном массиве" << endl << endl;
+
+	Reverse(fs4, n4);
+	start = chrono::high_resolution_clock::now();
+	QuickSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
+
+	f.close();
 #pragma endregion
 
 #pragma region BubbleSort
@@ -378,6 +413,40 @@ int main()
 	end = chrono::high_resolution_clock::now();
 	time = end - start;
 	PrintStats(n3, base, sup, time.count(), mem);
+	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
+
+	f.close();
+
+	//////////////////////////////////////////////////////////////////
+
+	f.open(path);
+
+	for (int i = 0; i < n4; i++)
+	{
+		f >> str;
+		fs4[i] = str;
+	}
+
+	start = chrono::high_resolution_clock::now();
+	BubbleSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В неотсортированном массиве" << endl << endl;
+
+	start = chrono::high_resolution_clock::now();
+	BubbleSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В отсортированном массиве" << endl << endl;
+
+	Reverse(fs4, n4);
+	start = chrono::high_resolution_clock::now();
+	BubbleSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
 	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
 
 	f.close();
@@ -488,6 +557,41 @@ int main()
 
 	f.close();
 
+	//////////////////////////////////////////////////////////////////
+
+	f.open(path);
+
+	for (int i = 0; i < n4; i++)
+	{
+		f >> str;
+		fs4[i] = str;
+	}
+
+	start = chrono::high_resolution_clock::now();
+	StraightSelection(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В неотсортированном массиве" << endl << endl;
+
+	start = chrono::high_resolution_clock::now();
+	StraightSelection(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В отсортированном массиве" << endl << endl;
+
+	Reverse(fs4, n4);
+	start = chrono::high_resolution_clock::now();
+	StraightSelection(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
+
+	f.close();
+
+
 #pragma endregion
 
 #pragma region HeapSort
@@ -593,6 +697,41 @@ int main()
 	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
 
 	f.close();
+
+	//////////////////////////////////////////////////////////////////
+
+	f.open(path);
+
+	for (int i = 0; i < n4; i++)
+	{
+		f >> str;
+		fs4[i] = str;
+	}
+
+	start = chrono::high_resolution_clock::now();
+	HeapSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В неотсортированном массиве" << endl << endl;
+
+	start = chrono::high_resolution_clock::now();
+	HeapSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В отсортированном массиве" << endl << endl;
+
+	Reverse(fs4, n4);
+	start = chrono::high_resolution_clock::now();
+	HeapSort(fs4, n4, base, sup, mem);
+	end = chrono::high_resolution_clock::now();
+	time = end - start;
+	PrintStats(n4, base, sup, time.count(), mem);
+	cout << "В массиве, отсортированном в обратном порядке" << endl << endl;
+
+	f.close();
+
 
 #pragma endregion
 }
