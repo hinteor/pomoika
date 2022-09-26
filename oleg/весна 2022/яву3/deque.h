@@ -204,13 +204,13 @@ public:
 	}
 	friend istream& operator >> (istream& in, deque& other) {
 		system("CLS");
-		cout << "Ââåäèòå êîë-âî ýëåìåíòîâ â î÷åðåäè : ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸ : ";
 		size_t newSize;
 		in >> newSize;
 		T p;
 		for (int i = 0; i < newSize; i++)
 		{
-			cout << "Ââåäèòå " << i + 1 << " ýëåìåíò : ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ " << i + 1 << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ : ";
 			in >> p;
 			other.push_back(p);
 			cout << endl;
